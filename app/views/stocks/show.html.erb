@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @stock.label %>
+</p>
+
+<p>
+  <strong>Parser type:</strong>
+  <%= @stock.parser_type %>
+</p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @stock.identifier %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
