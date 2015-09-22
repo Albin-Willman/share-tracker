@@ -36,12 +36,17 @@ group :development, :test do
   
   gem 'did_you_mean'
   gem 'fuubar'
-  gem 'minitest'
+
+  gem 'rspec-rails'
+  gem 'guard-spork'
+  gem 'guard-rubocop'
+  gem 'guard-rspec', '~> 4.3.1'
 
   gem 'regressor', '~> 0.4.0'
   gem 'git'
   gem 'bundler-audit', require: false
   gem 'consistency_fail' # Run with `consistency_fail`
+  gem 'simplecov', require: false
 end
 
 group :development do
