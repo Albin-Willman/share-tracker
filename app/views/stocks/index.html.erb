@@ -9,7 +9,9 @@
         header: ['Title'] + StockDatum::ATTRIBUTES.map(&:to_s) + [''],
         content: @stocks.map do |stock|
           data = stock.stock_data.last || StockDatum.new
-          [stock.label] + StockDatum::ATTRIBUTES.map { |attribute| data.public_send(attribute) } + [link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' }]
+          [link_to(stock.label, stock)] +
+          StockDatum::ATTRIBUTES.map { |attribute| data.public_send(attribute) } +
+          [link_to('Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' })]
         end) %>
 
-<%= link_to 'New', new_stock_path %>
+<%= link_to 'New', new_stock_path, class: 'btn btn-success' %>
