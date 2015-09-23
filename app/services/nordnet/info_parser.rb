@@ -13,7 +13,7 @@ module Nordnet
 
     private
 
-    def parse!(page, sd = StockData.new)
+    def parse!(page, sd = StockDatum.new)
       sd.ceo        = find_field(CEO_SELECTOR, page)
       sd.industry   = find_field(INDUSTRY_SELECTOR, page)
       sd.ticker     = find_field(TICKER_SELECTOR, page)

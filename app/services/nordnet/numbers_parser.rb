@@ -9,7 +9,7 @@ module Nordnet
     DIVIDEND_SELECTOR = '.nyckeltalStapelContainer:nth-child(11) .nyckeltalStapelUpp+ span'
     DEBT_SELECTOR     = 'tr:nth-child(14) .text+ td'
 
-    def call(page, sd = StockData.new)
+    def call(page, sd = StockDatum.new)
       sd.pe       = string_to_float(find_field(PE_SELECTOR, page))
       sd.ps       = string_to_float(find_field(PS_SELECTOR, page))
       sd.pb       = string_to_float(find_field(PB_SELECTOR, page))

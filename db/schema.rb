@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921214518) do
+ActiveRecord::Schema.define(version: 20150923075722) do
+
+  create_table "stock_data", force: :cascade do |t|
+    t.integer  "stock_id",   limit: 4
+    t.string   "ceo",        limit: 255
+    t.string   "industry",   limit: 255
+    t.string   "ticker",     limit: 255
+    t.integer  "market_cap", limit: 4
+    t.integer  "shares",     limit: 4
+    t.float    "pe",         limit: 24
+    t.float    "pb",         limit: 24
+    t.float    "ps",         limit: 24
+    t.string   "name",       limit: 255
+    t.float    "price",      limit: 24
+    t.integer  "revinue",    limit: 4
+    t.integer  "sales",      limit: 4
+    t.float    "dividend",   limit: 24
+    t.integer  "debt",       limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "stock_data", ["stock_id"], name: "index_stock_data_on_stock_id", using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.string   "label",       limit: 255
@@ -21,4 +43,5 @@ ActiveRecord::Schema.define(version: 20150921214518) do
     t.datetime "updated_at",              null: false
   end
 
+  add_foreign_key "stock_data", "stocks"
 end

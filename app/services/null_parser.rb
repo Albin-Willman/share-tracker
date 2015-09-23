@@ -1,5 +1,5 @@
 class NullParser
   def call(_identifier)
-    StockData.new
+    StockDatum.new
   end
 end

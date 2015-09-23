@@ -4,6 +4,7 @@ module Nordnet
     def initialize(path_opener = FileOpener.new)
       @path_opener = path_opener
     end
+
     def call(identifier)
       sd = InfoParser.new.call(info_page(identifier))
       NumbersParser.new.call(numbers_page(identifier), sd)
