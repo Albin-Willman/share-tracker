@@ -15,3 +15,15 @@
         end) %>
 
 <%= link_to 'New', new_stock_path, class: 'btn btn-success' %>
+
+
+<h3>Help section</h3>
+<p>
+  This is a very basic implementation and at this point it can only fetch data from <%= link_to 'Nordnet', 'https://www.nordnet.se/mux/web/nordnet/index.html', target: '_blank' %>. It will fetch data daily and update the fields you see in the table above. It will also keep all old records but right now there is no place for viewing them.
+</p>
+<p>
+  In order to add a new stock to track click the new button above and in the "url" field paste the link to the stock you want to track then click preview. You should now see a table with data regarding the company you selected. If you do click save, otherwise check the url and/or contact your admin.
+</p>
+<p>
+  For feature requests or feedback please contact your admin or visit this project on <%= link_to 'github', 'https://github.com/Albin-Willman/share-tracker', target: '_blank' %>
+</p>

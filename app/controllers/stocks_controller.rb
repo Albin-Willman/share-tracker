@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  before_action :set_stock, only: [:show, :edit, :update, :destroy]
+  before_action :set_stock, only: [:show, :destroy]
 
   # GET /stocks
   # GET /stocks.json
@@ -15,10 +15,6 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
-  end
-
-  # GET /stocks/1/edit
-  def edit
   end
 
   # POST /stocks
@@ -37,20 +33,6 @@ class StocksController < ApplicationController
         format.json { render :show, status: :created, location: @stock }
       else
         format.html { render :new }
-        format.json { render json: @stock.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /stocks/1
-  # PATCH/PUT /stocks/1.json
-  def update
-    respond_to do |format|
-      if @stock.update(stock_params)
-        format.html { redirect_to @stock, notice: 'Stock was successfully updated.' }
-        format.json { render :show, status: :ok, location: @stock }
-      else
-        format.html { render :edit }
         format.json { render json: @stock.errors, status: :unprocessable_entity }
       end
     end
