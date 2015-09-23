@@ -6,17 +6,17 @@ class CreateStockData < ActiveRecord::Migration
       t.string :ceo
       t.string :industry
       t.string :ticker
-      t.integer :market_cap
-      t.integer :shares
+      t.string :market_cap
+      t.string :shares
       t.float :pe
       t.float :pb
       t.float :ps
       t.string :name
       t.float :price
-      t.integer :revinue
-      t.integer :sales
+      t.string :revinue
+      t.string :sales
       t.float :dividend
-      t.integer :debt
+      t.string :debt
       t.timestamps null: false
     end
   end

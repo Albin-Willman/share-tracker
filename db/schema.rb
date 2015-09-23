@@ -18,17 +18,17 @@ ActiveRecord::Schema.define(version: 20150923075722) do
     t.string   "ceo",        limit: 255
     t.string   "industry",   limit: 255
     t.string   "ticker",     limit: 255
-    t.integer  "market_cap", limit: 4
-    t.integer  "shares",     limit: 4
+    t.string   "market_cap", limit: 255
+    t.string   "shares",     limit: 255
     t.float    "pe",         limit: 24
     t.float    "pb",         limit: 24
     t.float    "ps",         limit: 24
     t.string   "name",       limit: 255
     t.float    "price",      limit: 24
-    t.integer  "revinue",    limit: 4
-    t.integer  "sales",      limit: 4
+    t.string   "revinue",    limit: 255
+    t.string   "sales",      limit: 255
     t.float    "dividend",   limit: 24
-    t.integer  "debt",       limit: 4
+    t.string   "debt",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
