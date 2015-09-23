@@ -4,6 +4,7 @@ class CreateStocks < ActiveRecord::Migration
       t.string :label
       t.integer :parser_type
       t.string :identifier
+      t.string :url
 
       t.timestamps null: false
     end

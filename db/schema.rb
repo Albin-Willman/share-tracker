@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150923075722) do
     t.string   "label",       limit: 255
     t.integer  "parser_type", limit: 4
     t.string   "identifier",  limit: 255
+    t.string   "url",         limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

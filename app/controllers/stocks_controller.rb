@@ -24,7 +24,12 @@ class StocksController < ApplicationController
   # POST /stocks
   # POST /stocks.json
   def create
-    @stock = Stock.new(stock_params)
+    @stock = StockBuilderClerk.new.call(stock_params[:label], stock_params[:url])
+
+    if params[:preview]
+      @preview = true
+      render action: :new and return
+    end
 
     respond_to do |format|
       if @stock.save
@@ -69,6 +74,6 @@ class StocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_params
-      params.require(:stock).permit(:label, :parser_type, :identifier)
+      params.require(:stock).permit(:label, :url)
     end
 end

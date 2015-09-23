@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.dataTables-1.10.4
+//= require datatable-extensions
 //= require_tree .
+
+$(document).ready(function(){
+  $('.js-datatable').DataTable();
+});

@@ -4,7 +4,7 @@ require 'dummy_opener'
 RSpec.describe Nordnet::Parser do
   let(:parser)    { described_class.new(DummyOpener.new) }
   let(:good_call) { parser.call('test') }
-  let(:attributes) {[:ceo, :industry, :ticker, :market_cap, :shares, :pe, :pb, :ps, :name, :price, :revinue, :sales, :dividend, :debt]}
+  let(:attributes) {StockDatum::ATTRIBUTES}
 
   it 'returns a StockDatum' do
     expect(good_call).to be_a(StockDatum)
