@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
-  resources :stocks
   root to: 'stocks#index'
+
+  resources :stocks, except: [:edit, :update] do
+    collection do
+      get 'compare_stocks'
+    end
+  end
+
+  namespace :api do
+    get 'verify'
+    get 'stocks'
+    get 'stock/:id/', action: 'stock', as: :stock
+  end
+
+  match '*all' => 'api#cor', via: :options
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

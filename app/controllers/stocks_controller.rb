@@ -1,6 +1,7 @@
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :destroy]
 
+  http_basic_authenticate_with name: ENV['SHARES_USERNAME'], password: ENV['SHARES_PASSWORD']
   # GET /stocks
   # GET /stocks.json
   def index
@@ -46,6 +47,23 @@ class StocksController < ApplicationController
       format.html { redirect_to stocks_url, notice: 'Stock was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def compare_stocks
+    ids    = params[:stock_ids].reject { |e| e.blank? }
+    stocks = Stock.where(id: ids).includes(:stock_data)
+    series = []
+    stocks.each do |stock|
+      data = {}
+      stock.stock_data.each do |point|
+        data[point.created_at.to_date] = point.public_send(params[:field])
+      end
+      series << {
+        name: stock.label,
+        data: data
+      }
+    end
+    render json: series
   end
 
   private
