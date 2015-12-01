@@ -31,5 +31,16 @@ module ShareTracker
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+
+    config.middleware.insert_before 0, "Rack::Cors", :debug => true, :logger => (-> { Rails.logger }) do
+      allow do
+        origins '*'
+
+        resource '*',
+          :headers => :any,
+          :methods => [:get, :post, :delete, :put, :patch, :options],
+          :max_age => 0
+      end
+    end
   end
 end

@@ -24,6 +24,7 @@ gem 'simple_form'
 
 gem 'sprockets-rails', '~> 2.2.0'
 gem 'sprockets', '~> 2.12.0'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
