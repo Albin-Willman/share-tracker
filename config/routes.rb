@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    get 'verify'
-    get 'stocks'
-    get 'stock/:id/', action: 'stock', as: :stock
+    namespace :sessions do
+      get 'login'
+    end
+    resources :stocks, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
