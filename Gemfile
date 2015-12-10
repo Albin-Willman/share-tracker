@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', require: 'v8'
 
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
+gem 'active_model_serializers'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'

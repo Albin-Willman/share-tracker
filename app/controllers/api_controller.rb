@@ -7,11 +7,11 @@ class ApiController < ApplicationController
 
   def stocks
     @stocks = Stock.all
-    render :template => "stocks/index.json"
+    render json: {stocks: @stocks}
   end
 
   def stock
     @stock = Stock.find(params[:id])
-    render :template => "stocks/show.json"
+    render json: {stock: @stock}, include: ['stock_data']
   end
 end
