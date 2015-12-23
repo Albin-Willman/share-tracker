@@ -6,25 +6,27 @@ gem 'rails', '4.2.3'
 gem 'puma'
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor' # Views
   gem 'pg'
 end
 
 
-gem 'less-rails', '~> 2.6.0'
+gem 'less-rails', '~> 2.6.0' # Views
 
-gem 'uglifier', '>= 1.3.0'
-gem 'therubyracer', require: 'v8'
+gem 'uglifier', '>= 1.3.0' # Views
+gem 'therubyracer', require: 'v8' # Views
 
-gem 'jquery-rails'
-gem 'active_model_serializers'
+gem 'jquery-rails' # Views
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'twitter-bootstrap-rails'
-gem 'simple_form'
+gem 'twitter-bootstrap-rails' # Views
+gem 'simple_form' # Views
 
+
+gem 'active_model_serializers'
 gem 'sprockets-rails', '~> 2.2.0'
 gem 'sprockets', '~> 2.12.0'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rails-api'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
